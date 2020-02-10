@@ -65,7 +65,7 @@ By default its using "monitor" policy name and settings are in above example.
 - InfluxDB provider does not provide import existing databases to terraform state file. 
 
 # Future Work 
-- Extend role to support all 
+- Extend role to support all optional configuration for Enterprise and OSS version of InfluxDB
 
 ## License
 
