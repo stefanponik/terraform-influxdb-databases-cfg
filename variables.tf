@@ -2,10 +2,6 @@
 # Variables
 ###########
 
-variable "idb_url" {
-  type = string
-}
-
 variable "database_schema" {
   type = list(object({
     db_name = string
