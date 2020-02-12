@@ -18,7 +18,9 @@ Module provide programmatic and state aware way to manage InfluxDB databases and
 
     module "grf-datasources-cfg" {
       source          = "xxxxx"
-      idb_url         = var.idb_url
+      providers = {
+      influxdb  = influxdb
+      }
       database_schema = var.database_schema
     }
 
@@ -26,6 +28,9 @@ Module provide programmatic and state aware way to manage InfluxDB databases and
 Example Variables sample for configuration
 
     idb_url = "http://localhost:8086"
+
+    idb_username = "admin"
+    idb_password = "Password1"
 
     database_schema = [
       {
