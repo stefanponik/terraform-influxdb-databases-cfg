@@ -14,17 +14,42 @@ Module provide programmatic and state aware way to manage InfluxDB databases and
       }
     }
 
-# Terraform module main.tf
+# Terraform module main.tf root module
+
+    provider "influxdb" {
+      url = var.idb_url
+    }
+
+    provider "influxdb" {
+      alias    = "auth"
+      url      = var.idb_url
+      username = var.idb_username
+      password = var.idb_password
+    }
 
     module "grf-datasources-cfg" {
       source          = "xxxxx"
       providers = {
-      influxdb  = influxdb
+      influxdb  = influxdb.auth 
       }
       database_schema = var.database_schema
     }
 
-# Terraform .tfvars
+### Aletrnative Providers 
+Use default provider with URL only can be achived: 
+
+- Remove provider block from module 
+- Set provider block in module to below 
+
+      providers = {
+      influxdb  = influxdb
+      }
+
+Its individual preference
+
+# Terraform.tfvars
+- alternative use xx.auto.tfvars if you want to load them without using CLI flags.  
+
 Example Variables sample for configuration
 
     idb_url = "http://localhost:8086"
