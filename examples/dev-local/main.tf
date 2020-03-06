@@ -6,13 +6,6 @@ provider "influxdb" {
   url = var.idb_url
 }
 
-provider "influxdb" {
-  alias    = "auth"
-  url      = var.idb_url
-  username = var.idb_username
-  password = var.idb_password
-}
-
 #########
 # Modules
 #########

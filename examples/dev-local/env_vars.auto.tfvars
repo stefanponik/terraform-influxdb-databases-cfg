@@ -2,10 +2,7 @@
 # Variables 
 ###########
 
-idb_url = "http://localhost:8086"
-
-idb_username = "admin"
-idb_password = "Password1"
+idb_url = "http://172.0.0.1:8086"
 
 database_schema = [
   {
@@ -26,11 +23,6 @@ database_schema = [
         duration = "52w"
         default  = true
       },
-      #      {
-      #        name     = "dev-test-01"
-      #        duration = "52w"
-      #        default  = false
-      #      },
     ]
   },
 ]
