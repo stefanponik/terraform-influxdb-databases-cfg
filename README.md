@@ -1,6 +1,6 @@
 # terraform-influxdb-databases-cfg
 
-![](https://github.com/stefanponik/terraform-influxdb-databases-cfg/master/workflows/main.yml/badge.svg)
+![](https://github.com/stefanponik/terraform-influxdb-databases-cfg/workflows/main/badge.svg)
 
 # InfluxDB Terraform Module
 
