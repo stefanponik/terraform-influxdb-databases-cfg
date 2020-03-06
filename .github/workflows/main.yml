@@ -13,7 +13,9 @@ on:
     
   schedule:
   - cron: "0 2 * * 1-5"
-
+env:
+  tf_version: 'latest'
+  tf_working_dir: './examples/dev-local/'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -33,6 +35,10 @@ jobs:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v2
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: 'Terraform Format'
+      uses: hashicorp/terraform-github-actions@master
+      with:
+       tf_actions_version: ${{ env.tf_version }}
+       tf_actions_subcommand: 'fmt'
+       tf_actions_working_dir: ${{ env.tf_working_dir }}
+       tf_actions_comment: true
