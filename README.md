@@ -1,5 +1,7 @@
 # terraform-influxdb-databases-cfg
 
+https://github.com/stefanponik/terraform-influxdb-databases-cfg/workflows/main.yml/badge.svg
+
 # InfluxDB Terraform Module
 
 Module provide programmatic and state aware way to manage InfluxDB databases and policies for InfluxDB OSS running on any platform
