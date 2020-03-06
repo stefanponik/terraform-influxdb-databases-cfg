@@ -2,7 +2,7 @@
 # Variables 
 ###########
 
-idb_url = "http://172.0.0.1:8086"
+idb_url = "http://127.0.0.1:8086"
 
 database_schema = [
   {
