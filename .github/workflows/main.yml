@@ -9,7 +9,7 @@ on:
     branches: 
       - master
     tags: 
-    - v*.*.* 
+      - v1.*.*
     
   schedule:
   - cron: "0 8 * * 1"
@@ -17,6 +17,10 @@ env:
   tf_version: 'latest'
   tf_working_dir: './examples/dev-local/'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+strategy:
+  matrix:
+    db_version: [1.7.9, 1.7.10, latest]
+
 jobs:
   # This workflow contains a single job called "build"
   Terraform-InfluxDB-Databases:
@@ -26,7 +30,7 @@ jobs:
       # Label used to access the service container
       influxdb:
         # Docker Hub image
-        image: influxdb:latest
+        image: influxdb:${{ matrix.db_version }}
         ports:
         - 8086:8086
 
