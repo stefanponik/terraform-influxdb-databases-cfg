@@ -25,7 +25,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        db_version: [1.7.9, 1.7.10, latest]
+        db_version: [1.7.9, latest]
     services:
       # Label used to access the service container
       influxdb:
