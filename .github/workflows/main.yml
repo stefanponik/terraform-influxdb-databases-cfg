@@ -14,7 +14,7 @@ on:
   schedule:
   - cron: "0 8 * * 1"
 env:
-  tf_working_dir: './examples/dev-local/'
+  tf_working_dir: './test/tf/'
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 
 
